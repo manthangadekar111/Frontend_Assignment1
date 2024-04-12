@@ -40,7 +40,7 @@ const Book = ({ book }) => {
             <p><strong>Preview Link:</strong> <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">Preview</a></p>
             <p><strong>Info Link:</strong> <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">More Info</a></p>
             <p><strong>Canonical Volume Link:</strong> <a href={book.volumeInfo.canonicalVolumeLink} target="_blank" rel="noopener noreferrer">View on Google Books</a></p>
-            <p><strong>Reading Modes:</strong> {book.volumeInfo.readingModes.text ? 'Text' : 'No Text'}, {book.volumeInfo.readingModes.image ? 'Image' : 'No Image'}</p>
+            <p><strong>Reading Modes:</strong> {book.volumeInfo.readingModes.text ? 'True' : 'false'}, {book.volumeInfo.readingModes.image ? 'true' : 'false'}</p>
             <p><strong>ISBN-13:</strong> {book.volumeInfo.industryIdentifiers.find(identifier => identifier.type === 'ISBN_13')?.identifier}</p>
             <p><strong>ISBN-10:</strong> {book.volumeInfo.industryIdentifiers.find(identifier => identifier.type === 'ISBN_10')?.identifier}</p>
             <p><strong>Page Count:</strong> {book.volumeInfo.pageCount}</p>
@@ -53,14 +53,14 @@ const Book = ({ book }) => {
             <p><strong>Average Rating:</strong> {book.volumeInfo.averageRating}</p>
             <p><strong>Ratings Count:</strong> {book.volumeInfo.ratingsCount}</p>
             <p><strong>Maturity Rating:</strong> {book.volumeInfo.maturityRating}</p>
-            <p><strong>Allow Anonymous Logging:</strong> {book.volumeInfo.allowAnonLogging ? 'Yes' : 'No'}</p>
+            <p><strong>Allow Anonymous Logging:</strong> {book.volumeInfo.allowAnonLogging ? 'true' : 'false'}</p>
             <p><strong>Content Version:</strong> {book.volumeInfo.contentVersion}</p>
             <p><strong>Panelization Summary:</strong></p>
-            <p>&emsp;<strong>Contains Epub Bubbles:</strong> {book.volumeInfo.panelizationSummary && book.volumeInfo.panelizationSummary.containsEpubBubbles !== undefined ? book.volumeInfo.panelizationSummary.containsEpubBubbles.toString() : 'No'}</p>
-            <p>&emsp;<strong>Contains Image Bubbles:</strong> {book.volumeInfo.panelizationSummary && book.volumeInfo.panelizationSummary.containsImageBubbles !== undefined ? book.volumeInfo.panelizationSummary.containsImageBubbles.toString() : 'No'}</p>
+            <p>&emsp;<strong>Contains Epub Bubbles:</strong> {book.volumeInfo.panelizationSummary && book.volumeInfo.panelizationSummary.containsEpubBubbles !== undefined ? book.volumeInfo.panelizationSummary.containsEpubBubbles.toString() : 'false'}</p>
+            <p>&emsp;<strong>Contains Image Bubbles:</strong> {book.volumeInfo.panelizationSummary && book.volumeInfo.panelizationSummary.containsImageBubbles !== undefined ? book.volumeInfo.panelizationSummary.containsImageBubbles.toString() : 'false'}</p>
             <p><strong>Sale Country:</strong> {book.saleInfo.country}</p>
             <p><strong>Saleability:</strong> {book.saleInfo.saleability}</p>
-            <p><strong>Is Ebook:</strong> {book.saleInfo.isEbook ? 'Yes' : 'No'}</p>
+            <p><strong>Is Ebook:</strong> {book.saleInfo.isEbook ? 'true' : 'false'}</p>
             {/* <p><strong>List Price:</strong> {book.saleInfo.listPrice.amount} {book.saleInfo.listPrice.currencyCode}</p> */}
             {/* <p><strong>Retail Price:</strong> {book.saleInfo.retailPrice.amount} {book.saleInfo.retailPrice.currencyCode}</p> */}
 
@@ -89,11 +89,11 @@ const Book = ({ book }) => {
 
             <p><strong>Country:</strong> {book.accessInfo.country}</p>
             <p><strong>Viewability:</strong> {book.accessInfo.viewability}</p>
-            <p><strong>Embeddable:</strong> {book.accessInfo.embeddable ? 'Yes' : 'No'}</p>
-            <p><strong>Public Domain:</strong> {book.accessInfo.publicDomain ? 'Yes' : 'No'}</p>
+            <p><strong>Embeddable:</strong> {book.accessInfo.embeddable ? 'true' : 'false'}</p>
+            <p><strong>Public Domain:</strong> {book.accessInfo.publicDomain ? 'true' : 'false'}</p>
             <p><strong>Text to Speech Permission:</strong> {book.accessInfo.textToSpeechPermission}</p>
-            <p><strong>Epub Availability:</strong> {book.accessInfo.epub && book.accessInfo.epub.isAvailable ? 'Available' : 'Not Available'}</p>
-            <p><strong>PDF Availability:</strong> {book.accessInfo.pdf && book.accessInfo.pdf.isAvailable ? 'Available' : 'Not Available'}</p>
+            <p><strong>Epub Availability:</strong> {book.accessInfo.epub && book.accessInfo.epub.isAvailable ? 'true' : 'false'}</p>
+            <p><strong>PDF Availability:</strong> {book.accessInfo.pdf && book.accessInfo.pdf.isAvailable ? 'true' : 'false'}</p>
             <p><strong>Web Reader Link:</strong> <a href={book.accessInfo.webReaderLink} target="_blank" rel="noopener noreferrer">Read on Web</a></p>
             <p><strong>Access View Status:</strong> {book.accessInfo.accessViewStatus}</p>
             <p><strong>Quote Sharing Allowed:</strong> {book.accessInfo.quoteSharingAllowed ? 'Yes' : 'No'}</p>
